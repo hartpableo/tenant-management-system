@@ -68,3 +68,7 @@ function getCurrentUserID() {
 function old($key, $default = '') {
   return Session::get('old')[$key] ?? $default;
 }
+
+function isHome() {
+  return (bool) urlIs('/');
+}

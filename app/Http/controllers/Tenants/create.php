@@ -1,6 +1,7 @@
 <?php
 
-view('notes/create', [
-  'title' => 'Create Note',
-  'errors' => []
+use Core\Session;
+
+view('tenants/create', [
+  'errors' => Session::get('errors')
 ]);

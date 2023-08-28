@@ -13,13 +13,22 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-6">
-          <h1 class="m-0"><?php echo COMPANY_NAME; ?></h1>
+          <?php if (isHome()) : ?>
+          <h1 class="m-0 text-black"><?php echo COMPANY_NAME; ?></h1>
+          <?php else : ?>
+          <h1 class="m-0"><a href="/" class="text-black text-decoration-none" aria-label="link to home page"><?php echo COMPANY_NAME; ?></a></h1>
+          <?php endif; ?>
           <p class="m-0 fw-light"><?php echo APP_NAME; ?></p>
         </div>
-        <div class="col-12 col-md-6 text-md-end d-flex flex-column justify-content-center align-items-end">
+        <div class="col-12 col-md-6 text-md-end d-flex justify-content-end align-items-center gap-2">
           <a href="#">Exit</a>
         </div>
       </div>
     </div>
   </header>
   <main>
+
+  <?php $containerClasses = (urlIs('/')) ? 'container py-5' : 'container' ?>
+  
+  <section>
+    <div class="<?php echo $containerClasses ?>">
