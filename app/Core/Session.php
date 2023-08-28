@@ -4,7 +4,7 @@ namespace Core;
 
 class Session 
 {
-  public static function has($key, $value)
+  public static function has($key, $value = '')
   {
     if ($value && isset(static::get($key)[$value])) return true;
     

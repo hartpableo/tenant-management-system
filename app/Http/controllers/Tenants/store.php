@@ -1,29 +1,35 @@
 <?php
 
 use Core\App;
+use Core\Session;
 use Core\Database;
-use Core\Validator;
+use Core\Authenticator;
+use Http\Forms\AddTenantForm;
 
 $db = App::resolve(Database::class);
 
-$current_user_id = getCurrentUserID();
-echo $current_user_id;
-
 $errors = [];
 
-if (!Validator::string($_POST['body'], 1, 1000)) $errors['body'] = 'A body of no more than 1000 characters is required!';
+$attributes = [
+  'name' => $_POST['name'],
+  'email' => $_POST['email'],
+  'contact' => $_POST['contact'],
+  'room' => $_POST['room'],
+  'rent_start' => $_POST['rent_start']
+];
 
-if (!empty($errors)) {
-  return view('notes/create', [
-    'title' => 'Create Note',
-    'errors' => $errors
-  ]);
-}
+// Validate submitted form values
+$form = AddTenantForm::validate($attributes);
 
-$db->query('INSERT INTO notes(body, user_id) VALUES(:body, :user_id)', [
-  'body' => $_POST['body'],
-  'user_id' => $current_user_id,
+// Check if tenant is already registered
+$tenantExists = (new Authenticator())->tenantExists($attributes);
+
+if (!$tenantExists) $form->addError('errors', 'Tenant already registered!')->throw();
+
+$form->register($attributes);
+
+Session::flash('message', [
+  'registered' => 'Congratulations! Tenant has been successfully registered.'
 ]);
 
-redirect('/');
-exit();
+redirect();

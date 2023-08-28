@@ -44,8 +44,8 @@ function view($path, $attributes = []) {
   return require base_path("app/views/{$path}.view.php");
 }
 
-function get_template_part($template_part) {
-  view("partials/{$template_part}");
+function get_template_part($template_part, $attributes = []) {
+  view("partials/{$template_part}", $attributes);
 }
 
 function assetPath($path_to_file) {
