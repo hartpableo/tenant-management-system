@@ -2,24 +2,24 @@
 
 use Core\App;
 use Core\Database;
-use Core\Response;
+use Core\Session;
 
 $db = App::resolve(Database::class);
 
-$current_user_id = getCurrentUserID();
+$attributes = [
+  'id' => $_POST['id']
+];
 
-$id = $_POST['id'];
-$method = $_POST['_method'];
-
-$note = $db->query('select * from notes where id = :id', [
-  ':id' => $id,
+$tenant = $db->query('select * from tenants where id = :id', [
+  ':id' => $attributes['id']
 ])->findOrFail();
 
-authorize($note['user_id'] !== $current_user_id, Response::FORBIDDEN);
-
-$db->query('delete from notes where id = :id', [
-  ':id' => $id
+$db->query('delete from tenants where id = :id', [
+  ':id' => $attributes['id']
 ]);
 
-header('location: /');
-exit();
+Session::flash('message', [
+  'deleted' => "<strong>{$tenant['name']}</strong> has been successfully removed!"
+]);
+
+redirect();

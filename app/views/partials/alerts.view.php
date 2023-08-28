@@ -8,8 +8,10 @@
 </div>
 <?php endforeach; endif; ?>
 
-<?php if (Session::has('message', 'registered')) : ?>
-<div class="alert alert-success" role="alert">
-  <?php echo Session::get('message')['registered']; ?>
-</div>
+<?php if (Session::has('message')) : ?>
+  <?php foreach (Session::get('message') as $message) : ?>
+    <div class="alert alert-success" role="alert">
+      <?php echo $message; ?>
+    </div>
+  <?php endforeach; ?>
 <?php endif; ?>

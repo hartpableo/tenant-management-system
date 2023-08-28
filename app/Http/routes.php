@@ -17,3 +17,4 @@ $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 $router->get('/', 'Tenants/index');
 $router->get('/tenants/create', 'Tenants/create');
 $router->post('/tenant/store', 'Tenants/store');
+$router->delete('/tenant/delete', 'Tenants/destroy');

@@ -32,7 +32,11 @@ get_template_part('alerts');
           <td>
             <a href="#" class="btn btn-primary btn-sm">View Profile</a>
             <a href="#" class="btn btn-warning btn-sm">Edit Profile</a>
-            <a href="#" class="btn btn-danger btn-sm">Remove</a>
+            <form action="/tenant/delete" method="POST" class="d-inline-block">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="hidden" name="id" value="<?php echo $tenant['id']; ?>">
+              <button class="btn btn-danger btn-sm" type="submit">Remove</button>
+            </form>
           </td>
         </tr>
   <?php endforeach; ?>
