@@ -1,16 +1,8 @@
 <?php
-get_template_part('header'); 
+get_template_part('header');
+get_template_part('search');
 get_template_part('alerts'); 
 ?>
-
-<!-- Search Filter -->
-<div class="input-group mb-5 mx-auto" style="max-width: calc(var(--bs-breakpoint-sm) - 5rem);">
-  <label class="sr-only" for="search">Search</label>
-  <input type="search" id="search" class="form-control" placeholder="Search...">
-  <button type="button" class="btn btn-primary" aria-label="Search">
-    Search
-  </button>
-</div>
 
 <?php if (!empty($tenants)) : ?>
   <table class="table table-striped border">
@@ -50,9 +42,5 @@ get_template_part('alerts');
 <?php else : ?>
   <h2>No tenants yet...</h2>
 <?php endif; ?>
-
-<div class="mt-5 d-flex gap-2 justify-content-start align-items-start flex-wrap">
-  <a href="/tenants/create" class="btn btn-success">Add new tenant</a>
-</div>
 
 <?php get_template_part('footer'); ?>
