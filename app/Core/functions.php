@@ -1,7 +1,8 @@
 <?php
 
-use Core\Response;
 use Core\Session;
+use Core\Response;
+use Core\Validator;
 
 function show($stuff) {
   echo "<pre>";
@@ -71,4 +72,8 @@ function old($key, $default = '') {
 
 function isHome() {
   return (bool) urlIs('/');
+}
+
+function convertDate($value, $format = 'Y-m-d H:i:s') {
+  return date($format, strtotime($value));
 }

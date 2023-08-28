@@ -11,7 +11,7 @@ $db = App::resolve(Database::class);
 $errors = [];
 
 $attributes = [
-  'name' => $_POST['name'],
+  'name' => trim($_POST['name']),
   'email' => $_POST['email'],
   'contact' => $_POST['contact'],
   'room' => $_POST['room'],
@@ -24,7 +24,7 @@ $form = AddTenantForm::validate($attributes);
 // Check if tenant is already registered
 $tenantExists = (new Authenticator())->tenantExists($attributes);
 
-if (!$tenantExists) $form->addError('errors', 'Tenant already registered!')->throw();
+if ($tenantExists) $form->addError('errors', 'Tenant already registered!')->throw();
 
 $form->register($attributes);
 

@@ -12,23 +12,23 @@
 
     <div class="mb-3">
       <label for="name" class="form-label">Name</label>
-      <input type="text" class="form-control" id="name" name="name">
+      <input type="text" class="form-control" id="name" name="name" value="<?php echo old('name') ?? ''; ?>">
     </div>
     <div class="mb-3">
       <label for="email" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="email" name="email">
+      <input type="email" class="form-control" id="email" name="email" value="<?php echo old('email') ?? ''; ?>">
     </div>
     <div class="mb-3">
       <label class="form-label" for="contact">Contact Number</label>
-      <input type="number" id="contact" name="contact" class="form-control" placeholder="+63">
+      <input type="number" id="contact" name="contact" class="form-control" placeholder="+63" value="<?php echo old('contact') ?? ''; ?>">
     </div>
     <div class="mb-3">
       <label class="form-label" for="room">Room</label>
-      <input type="text" id="room" name="room" class="form-control">
+      <input type="text" id="room" name="room" class="form-control" value="<?php echo old('room') ?? ''; ?>">
     </div>
     <div class="mb-3">
       <label class="form-label" for="rent_start">Rent Started</label>
-      <input type="date" id="rent_start" name="rent_start" class="form-control">
+      <input type="date" id="rent_start" name="rent_start" class="form-control" value="<?php echo old('rent_start') ?? ''; ?>">
     </div>
     <div class="btn-group btn-group mt-3">
       <button type="submit" class="btn btn-primary">Create</button>

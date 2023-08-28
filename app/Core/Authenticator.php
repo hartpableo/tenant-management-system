@@ -38,15 +38,14 @@ class Authenticator
 
   public function tenantExists($attributes = [])
   {
-    $tenant = App::resolve(Database::class)->query('select * from tenants where name = :name and email = :email and contact = :contact and room = :room and rent_start = :rent_start', [
+    $tenant = App::resolve(Database::class)->query('select * from tenants where name = :name and email = :email and contact = :contact and room = :room', [
       ':name' => $attributes['name'],
       ':email' => $attributes['email'],
       ':contact' => $attributes['contact'],
       ':room' => $attributes['room'],
-      ':rent_start' => $attributes['rent_start']
     ])->find();
 
-    if ($tenant) return true;
+    return (bool) ($tenant) ? true : false;
   }
 
   public function login($user = []) {

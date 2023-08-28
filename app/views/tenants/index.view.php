@@ -28,7 +28,7 @@ get_template_part('alerts');
           <td><a href="mailto:<?php echo $tenant['email']; ?>"><?php echo $tenant['email']; ?></a></td>
           <td><a href="tel:<?php echo $tenant['contact'];?>"><?php echo $tenant['contact'];?></a></td>
           <td><?php echo $tenant['room']; ?></td>
-          <td><?php echo date( 'M d, Y', strtotime($tenant['rent_start'])); ?></td>
+          <td><?php echo convertDate($tenant['rent_start'], 'M d, Y'); ?></td>
           <td>
             <a href="#" class="btn btn-primary btn-sm">View Profile</a>
             <a href="#" class="btn btn-warning btn-sm">Edit Profile</a>
