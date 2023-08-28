@@ -1,10 +1,6 @@
 <?php
-
-use Core\Session;
-
 get_template_part('header'); 
 get_template_part('alerts'); 
-
 ?>
 
 <?php if (!empty($tenants)) : ?>
@@ -30,7 +26,7 @@ get_template_part('alerts');
           <td><?php echo $tenant['room']; ?></td>
           <td><?php echo convertDate($tenant['rent_start'], 'M d, Y'); ?></td>
           <td>
-            <a href="#" class="btn btn-primary btn-sm">View Profile</a>
+            <a href="/tenant/profile?id=<?php echo $tenant['id']; ?>" class="btn btn-primary btn-sm">View Profile</a>
             <a href="#" class="btn btn-warning btn-sm">Edit Profile</a>
             <form action="/tenant/delete" method="POST" class="d-inline-block">
               <input type="hidden" name="_method" value="DELETE">

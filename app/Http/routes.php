@@ -18,3 +18,4 @@ $router->get('/', 'Tenants/index');
 $router->get('/tenants/create', 'Tenants/create');
 $router->post('/tenant/store', 'Tenants/store');
 $router->delete('/tenant/delete', 'Tenants/destroy');
+$router->get('/tenant/profile', 'Tenants/show');
