@@ -1,0 +1,17 @@
+{
+    "name": "hartpableo/tenant-management-system",
+    "description": "a php-based system for managing tenants/renters",
+    "autoload": {
+        "psr-4": {
+            "Core\\": "app/Core",
+            "Http\\": "app/Http"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hart Pableo",
+            "email": "pableoh@gmail.com"
+        }
+    ],
+    "require": {}
+}

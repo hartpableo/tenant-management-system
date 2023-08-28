@@ -14,4 +14,4 @@ $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
  */
 
 //  Notes
-// $router->get('/', 'Notes/index');
+$router->get('/', 'Tenants/index');
