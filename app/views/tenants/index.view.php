@@ -30,7 +30,7 @@ get_template_part('alerts');
           <td><?php echo convertDate($tenant['rent_start'], 'M d, Y'); ?></td>
           <td>
             <a href="/tenant/profile?id=<?php echo $tenant['id']; ?>" class="btn btn-primary btn-sm">View Profile</a>
-            <a href="#" class="btn btn-warning btn-sm">Edit Profile</a>
+            <a href="/tenant/edit?id=<?php echo $tenant['id']; ?>" class="btn btn-warning btn-sm">Edit Profile</a>
             <form action="/tenant/delete" method="POST" class="d-inline-block">
               <input type="hidden" name="_method" value="DELETE">
               <input type="hidden" name="id" value="<?php echo $tenant['id']; ?>">
