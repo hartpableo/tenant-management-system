@@ -1,6 +1,8 @@
 <?php
 get_template_part('header');
-get_template_part('search');
+get_template_part('search', [
+  'tenants' => $tenants
+]);
 get_template_part('alerts'); 
 ?>
 

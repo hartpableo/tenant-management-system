@@ -5,7 +5,13 @@ use Core\Database;
 
 $db = App::resolve(Database::class);
 
-$tenants = $db->query('select * from tenants')->findAll();
+if (!isset($_GET['search'])) {
+  $tenants = $db->query('select * from tenants')->findAll();
+} else {
+  $tenants = $db->query('select * from tenants where lower(name) like :search', [
+    ':search' => '%' . strtolower($_GET['search']) . '%'
+  ])->findAll();
+}
 
 view('tenants/index', [
   'tenants' => $tenants
