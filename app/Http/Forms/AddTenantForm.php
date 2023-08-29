@@ -4,6 +4,7 @@ namespace Http\Forms;
 
 use Core\App;
 use Core\Database;
+use Core\Formatter;
 use Core\Validator;
 use Http\Forms\Form;
 use Core\ValidationException;
@@ -31,7 +32,7 @@ class AddTenantForm extends Form
     App::resolve(Database::class)->query('INSERT INTO tenants(name, email, contact, room, rent_start) VALUES(:name, :email, :contact, :room, :rent_start)', [
       ':name' => $attributes['name'],
       ':email' => $attributes['email'],
-      ':contact' => $attributes['contact'],
+      ':contact' => Formatter::phoneNumber($attributes['contact']),
       ':room' => $attributes['room'],
       ':rent_start' => convertDate($attributes['rent_start']),
     ]);

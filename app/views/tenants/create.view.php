@@ -20,7 +20,7 @@
     </div>
     <div class="mb-3">
       <label class="form-label" for="contact">Contact Number</label>
-      <input type="number" id="contact" name="contact" class="form-control" placeholder="+63" value="<?php echo old('contact') ?? ''; ?>">
+      <input type="tel" id="contact" name="contact" class="form-control" value="<?php echo old('contact') ?? ''; ?>">
     </div>
     <div class="mb-3">
       <label class="form-label" for="room">Room</label>
