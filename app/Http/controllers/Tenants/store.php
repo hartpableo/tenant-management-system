@@ -8,8 +8,6 @@ use Http\Forms\AddTenantForm;
 
 $db = App::resolve(Database::class);
 
-$errors = [];
-
 $attributes = [
   'name' => trim($_POST['name']),
   'email' => $_POST['email'],

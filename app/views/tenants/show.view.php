@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="d-flex pt-1 gap-1">
-          <button type="button" class="btn btn-primary flex-grow-1">Update Profile</button>
+          <a href="/tenant/edit?id=<?php echo $tenant['id']; ?>" class="btn btn-primary flex-grow-1">Update Profile</a>
           <a href="/" class="btn btn-outline-secondary flex-grow-1">Go Back</a>
           <form action="/tenant/delete" method="POST" class="d-inline-block flex-grow-1" style="max-width: fit-content;">
             <input type="hidden" name="_method" value="DELETE">

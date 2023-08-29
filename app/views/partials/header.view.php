@@ -28,7 +28,7 @@
   </header>
   <main>
 
-  <?php $containerClasses = (urlIs('/')) ? 'container py-5' : 'container' ?>
+  <?php $containerClasses = (urlIs('/') || isset($_GET['search'])) ? 'container py-5' : 'container' ?>
   
   <section>
     <div class="<?php echo $containerClasses ?>">

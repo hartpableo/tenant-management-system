@@ -20,3 +20,4 @@ $router->post('/tenant/store', 'Tenants/store');
 $router->delete('/tenant/delete', 'Tenants/destroy');
 $router->get('/tenant/profile', 'Tenants/show');
 $router->get('/tenant/edit', 'Tenants/edit');
+$router->patch('/tenant/update', 'Tenants/update');
