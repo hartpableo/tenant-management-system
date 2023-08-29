@@ -17,6 +17,11 @@ class Validator
     return filter_var($value, FILTER_VALIDATE_EMAIL);
   }
 
+  public static function date($value)
+  {
+    return (bool) $value;
+  }
+
   public static function contactNumber($value)
   {
       // Remove all non-digit characters from the contact number

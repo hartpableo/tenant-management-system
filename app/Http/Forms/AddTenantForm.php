@@ -16,6 +16,7 @@ class AddTenantForm extends Form
     if (!Validator::email($attributes['email'])) $this->errors['email_error'] = 'Email is invalid!';
     if (!Validator::contactNumber($attributes['contact'], 15, 20)) $this->errors['contact_error'] = 'Contact number is invalid!';
     if (!Validator::string($attributes['room'], 2, INF)) $this->errors['room_error'] = 'Room is invalid!';
+    if (!Validator::date($attributes['rent_start'])) $this->errors['date_error'] = 'Rent start date is missing!';
   }
 
   public static function validate($attributes)
