@@ -3,7 +3,7 @@
     <label class="sr-only" for="search">Search</label>
     <input type="search" id="search" class="form-control" name="search" placeholder="Search by name..." value="<?php echo $_GET['search'] ?? ''; ?>">
     <button type="submit" class="btn btn-primary" aria-label="Filter Search">Search</button>
-    <?php if (isset($_GET['search'])) : ?>
+    <?php if (!searchIsEmpty()) : ?>
       <a href="/" class="btn btn-outline-info">Clear Filters</a>
     <?php endif; ?>
   </form>

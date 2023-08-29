@@ -77,3 +77,7 @@ function isHome() {
 function convertDate($value, $format = 'Y-m-d H:i:s') {
   return date($format, strtotime($value));
 }
+
+function searchIsEmpty() {
+  return (bool) (!isset($_GET['search']) || $_GET['search'] === '');
+}
