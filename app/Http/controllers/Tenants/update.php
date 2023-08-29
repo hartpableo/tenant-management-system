@@ -15,7 +15,6 @@ $attributes = [
   'room' => $_POST['room']
 ];
 
-// This is the issue, validator seems to not wor
 $form = UpdateTenantForm::validate($attributes);
 
 $tenant = $db->query('select * from tenants where id = :id', [
@@ -24,11 +23,9 @@ $tenant = $db->query('select * from tenants where id = :id', [
 
 if (!$tenant) $form->addError('errors', 'Tenant already registered!')->throw();
 
-$tenantExists = (new Authenticator())->tenantExists($attributes);
+// $tenantExists = (new Authenticator())->tenantExists($attributes);
 
-if ($tenantExists) {
-  redirect("/tenant/edit?id={$tenant['id']}");
-}
+// if ($tenantExists) redirect("/tenant/edit?id={$tenant['id']}");
 
 $form->updateTenant($attributes);
 
