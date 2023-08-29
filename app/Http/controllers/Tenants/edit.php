@@ -2,6 +2,7 @@
 
 use Core\App;
 use Core\Database;
+use Core\Session;
 
 $db = App::resolve(Database::class);
 
@@ -10,6 +11,6 @@ $tenant = $db->query('select * from tenants where id = :id', [
 ])->findOrFail();
 
 view('tenants/edit', [
-  'errors' => [],
+  'errors' => Session::get('errors'),
   'tenant' => $tenant
 ]);

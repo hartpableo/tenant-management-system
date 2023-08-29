@@ -27,6 +27,6 @@ class Validator
       // Remove all non-digit characters from the contact number
       $cleanedNumber = preg_replace('/\D/', '', $value);
       // Example: Validate if the cleaned number is exactly 10 digits
-      return strlen($cleanedNumber) <= 13;
+      return (bool) ctype_digit($value) && strlen($cleanedNumber) <= 13 && strlen($cleanedNumber) > 6;
   }
 }

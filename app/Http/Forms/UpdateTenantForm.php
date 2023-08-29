@@ -6,6 +6,7 @@ use Core\App;
 use Core\Database;
 use Core\Formatter;
 use Core\Validator;
+use Http\Forms\Form;
 use Core\ValidationException;
 
 class UpdateTenantForm extends Form
@@ -21,14 +22,13 @@ class UpdateTenantForm extends Form
   public static function validate($attributes)
   {
     $instance = new static($attributes);
-
-    return $instance->failed() ? $instance->throw() : $instance;
+    return ($instance->failed()) ? $instance->throw() : $instance;
   }
 
   public function updateTenant($attributes = []) 
   {
     App::resolve(Database::class)->query('update tenants set name = :name, email = :email, contact = :contact, room = :room where id = :id', [
-      ':id' => $attributes['id'],
+      ':id' => $_POST['id'],
       ':name' => $attributes['name'],
       ':email' => $attributes['email'],
       ':contact' => Formatter::phoneNumber($attributes['contact']),
