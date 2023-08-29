@@ -8,9 +8,10 @@ class Auth
 {
   public function handle()
   {
+    if (!isset($_SESSION['user']) && urlIs('/')) redirect('/login');
+     
     if (!isset($_SESSION['user'])) 
     {
-      // header('location: /');
       abort(Response::FORBIDDEN);
       exit();
     }
