@@ -21,7 +21,11 @@
           <p class="m-0 fw-light"><?php echo APP_NAME; ?></p>
         </div>
         <div class="col-12 col-md-6 text-md-end d-flex justify-content-end align-items-center gap-2">
-          <a href="#">Exit</a>
+          <?php if (auth()) : ?>
+            <a href="#">Exit</a>
+          <?php else : ?>
+            <a href="#">Login</a>
+          <?php endif; ?>
         </div>
       </div>
     </div>

@@ -14,10 +14,10 @@ $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
  */
 
 //  Notes
-$router->get('/', 'Tenants/index');
-$router->get('/tenants/create', 'Tenants/create');
-$router->post('/tenant/store', 'Tenants/store');
-$router->delete('/tenant/delete', 'Tenants/destroy');
-$router->get('/tenant/profile', 'Tenants/show');
-$router->get('/tenant/edit', 'Tenants/edit');
-$router->patch('/tenant/update', 'Tenants/update');
+$router->get('/', 'Tenants/index')->only('auth');
+$router->get('/tenants/create', 'Tenants/create')->only('auth');
+$router->post('/tenant/store', 'Tenants/store')->only('auth');
+$router->delete('/tenant/delete', 'Tenants/destroy')->only('auth');
+$router->get('/tenant/profile', 'Tenants/show')->only('auth');
+$router->get('/tenant/edit', 'Tenants/edit')->only('auth');
+$router->patch('/tenant/update', 'Tenants/update')->only('auth');
