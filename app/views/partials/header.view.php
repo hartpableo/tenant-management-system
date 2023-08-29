@@ -14,9 +14,9 @@
       <div class="row">
         <div class="col-12 col-md-6">
           <?php if (isHome()) : ?>
-          <h1 class="m-0 text-black"><?php echo COMPANY_NAME; ?></h1>
+          <h1 class="m-0"><?php echo COMPANY_NAME; ?></h1>
           <?php else : ?>
-          <h1 class="m-0"><a href="/" class="text-black text-decoration-none" aria-label="link to home page"><?php echo COMPANY_NAME; ?></a></h1>
+          <h1 class="m-0"><a href="/" class="text-decoration-none" aria-label="link to home page"><?php echo COMPANY_NAME; ?></a></h1>
           <?php endif; ?>
           <p class="m-0 fw-light"><?php echo APP_NAME; ?></p>
         </div>
