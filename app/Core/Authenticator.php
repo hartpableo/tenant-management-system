@@ -8,18 +8,16 @@ use Core\Database;
 
 class Authenticator 
 {
-  public function attempt($name, $email, $password) 
+  public function attempt($name, $password) 
   {
-    $user = App::resolve(Database::class)->query('select * from users where email = :email', [
-      ':email' => $email
+    $manager = App::resolve(Database::class)->query('select * from managers where name = :name', [
+      ':name' => $name
     ])->find();
 
-    if ($user && $user['name'] === $name && password_verify($password, $user['password'])) {
-
+    if ($manager && $manager['name'] === $name && md5($password) == $manager['password']) {
       $this->login([
-        'id' => $user['id'],
-        'name' => $name,
-        'email' => $email,
+        'id' => $manager['id'],
+        'name' => $name
       ]);
 
       return true;

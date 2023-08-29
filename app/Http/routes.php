@@ -13,6 +13,7 @@ $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
  * ==================
  */
 $router->get('/login', 'Managers/login')->only('guest');
+$router->post('/manager/authenticate', 'Managers/authenticate')->only('guest');
 $router->get('/', 'Tenants/index')->only('auth');
 $router->get('/tenants/create', 'Tenants/create')->only('auth');
 $router->post('/tenant/store', 'Tenants/store')->only('auth');
