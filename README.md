@@ -11,7 +11,13 @@ A system aiming to ease the property owners' job in keeping track of their tenan
 
 ### Features
 
-- Coming soon...
+- Management Login/Access
+- Add a tenant
+- View all tenants
+- Filter Search through tenants by name
+- View tenant profile
+- Update/edit tenant profile
+- Remove/delete tenant data
 
 ## Contact Author
 
