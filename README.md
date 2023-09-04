@@ -1,7 +1,7 @@
 # Tenant Management System
 
 > **Author:** Hart Pableo  
-> **Tech:** Object-Oriented PHP
+> **Tech:** Object-Oriented PHP, PDO, SQL
 
 <img src="./featured.png" alt="screenshot of tenant management system home page"/>
 
