@@ -25,3 +25,18 @@ td a {
 a {
   color: inherit;
 }
+
+.fadeout {
+  animation-name: fadeout;
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
