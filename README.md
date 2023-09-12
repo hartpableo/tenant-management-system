@@ -1,7 +1,7 @@
 # Tenant Management System
 
 > **Author:** Hart Pableo  
-> **Tech:** Object-Oriented PHP
+> **Tech:** Object-Oriented PHP, PDO, SQL
 
 <img src="./featured.png" alt="screenshot of tenant management system home page"/>
 
@@ -11,7 +11,13 @@ A system aiming to ease the property owners' job in keeping track of their tenan
 
 ### Features
 
-- Coming soon...
+- Management Login/Access
+- Add a tenant
+- View all tenants
+- Filter Search through tenants by name
+- View tenant profile
+- Update/edit tenant profile
+- Remove/delete tenant data
 
 ## Contact Author
 
