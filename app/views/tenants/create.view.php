@@ -30,7 +30,8 @@
       <input type="tel" id="contact" name="contact" class="form-control" value="<?php echo old('contact') ?? ''; ?>">
     </div>
     <div class="mb-3">
-      <label for="profile-image" class="form-label">Profile Picture</label>
+      <img id="preview-image" class="visually-hidden" width="120" height="120" loading="lazy" style="object-fit: cover;object-position: center;" aria-hidden="true">
+      <label for="profile-image" class="form-label d-block mt-2">Profile Picture</label>
       <input class="form-control" type="file" id="profile-image" name="profile-image">
     </div>
     <div class="mb-3">

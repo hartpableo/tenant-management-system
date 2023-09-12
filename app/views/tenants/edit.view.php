@@ -31,7 +31,7 @@
       <input type="tel" id="contact" name="contact" class="form-control" value="<?php echo $tenant['contact']; ?>">
     </div>
     <div class="mb-3">
-      <img src="<?php echo getProfileImage($tenant['profile_image']) ?>" alt="Photo of <?php echo $tenant['name']; ?>" width="120" height="120" loading="lazy" style="object-fit: cover;object-position: center;" aria-hidden="true">
+      <img id="preview-image" src="<?php echo getProfileImage($tenant['profile_image']) ?>" alt="Photo of <?php echo $tenant['name']; ?>" width="120" height="120" loading="lazy" style="object-fit: cover;object-position: center;" aria-hidden="true">
       <label for="profile-image" class="form-label d-block mt-2">Profile Picture</label>
       <input class="form-control w-full" type="file" id="profile-image" name="profile-image">
     </div>

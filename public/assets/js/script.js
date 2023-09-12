@@ -1,5 +1,9 @@
 window.addEventListener('load', () => {
+
   removeAlerts(document.querySelectorAll('.alert'));
+
+  imageInput.addEventListener('change', previewSelectedImage);
+
 }, {passive: true})
 
 // remove alert after x seconds
@@ -11,6 +15,22 @@ function removeAlerts(alerts) {
       setTimeout(() => {
         alerts[i].remove();
       }, 2600 + (500 * [i]));
+    }
+  }
+}
+
+// preview image on upload
+const imageInput = document.getElementById('profile-image');
+const previewImage = document.getElementById('preview-image');
+
+function previewSelectedImage() {
+  const file = imageInput.files[0];
+  if (file) {
+    previewImage.classList.remove('visually-hidden');
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function(e) {
+        previewImage.src = e.target.result;
     }
   }
 }
