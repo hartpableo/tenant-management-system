@@ -13,7 +13,8 @@ $attributes = [
   'email' => $_POST['email'],
   'contact' => $_POST['contact'],
   'room' => $_POST['room'],
-  'rent_start' => $_POST['rent_start']
+  'rent_start' => $_POST['rent_start'],
+  'profile_image' => $_FILES['profile-image']
 ];
 
 // Validate submitted form values

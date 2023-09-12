@@ -20,6 +20,11 @@ class Validator
     return (bool) $value;
   }
 
+  public static function imageValidate($imageFile = [], $maxSize = 1000000)
+  {
+    return $imageFile['error'] <= 0 && $imageFile['size'] <= $maxSize;
+  }
+
   public static function contactNumber($value)
   {
       // Remove all non-digit characters from the contact number

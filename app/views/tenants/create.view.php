@@ -5,7 +5,8 @@
   ]);
 ?>
 
-  <form action="/tenant/store" method="POST" class="mx-auto p-5 rounded-4 border shadow-lg" style="max-width: var(--bs-breakpoint-sm);">
+  <form action="/tenant/store" method="POST" enctype="multipart/form-data" class="mx-auto p-5 rounded-4 border shadow-lg" style="max-width: var(--bs-breakpoint-sm);">
+  
     <h2 class="fs-4 m-0 fw-bold w-100 d-inline-flex justify-content-start align-items-center gap-3 lh-1">
       <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#3a0ddb" class="bi bi-person-fill-add" viewBox="0 0 16 16" aria-hidden="true">
         <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
@@ -27,6 +28,10 @@
     <div class="mb-3">
       <label class="form-label" for="contact">Contact Number</label>
       <input type="tel" id="contact" name="contact" class="form-control" value="<?php echo old('contact') ?? ''; ?>">
+    </div>
+    <div class="mb-3">
+      <label for="profile-image" class="form-label">Profile Picture</label>
+      <input class="form-control" type="file" id="profile-image" name="profile-image">
     </div>
     <div class="mb-3">
       <label class="form-label" for="room">Room</label>
