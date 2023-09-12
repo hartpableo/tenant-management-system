@@ -25,7 +25,7 @@ get_template_part('alerts');
         <tr>
           <th scope="row"><?php echo $tenant['id']; ?></th>
           <td>
-            <img src="<?php echo getProfileImage($tenant['profile_image']) ?>" alt="" width="60" height="60" loading="lazy" style="object-fit: cover;object-position: center;">
+            <img src="<?php echo getProfileImage($tenant['profile_image']) ?>" alt="Photo of <?php echo $tenant['name']; ?>" width="60" height="60" loading="lazy" style="object-fit: cover;object-position: center;">
           </td>
           <td><?php echo $tenant['name']; ?></td>
           <td><a href="mailto:<?php echo $tenant['email']; ?>"><?php echo $tenant['email']; ?></a></td>

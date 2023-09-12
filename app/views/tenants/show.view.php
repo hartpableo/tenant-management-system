@@ -7,6 +7,8 @@
   <div class="card-body p-4">
     <div class="text-black">
       <div class="ms-3">
+        <img src="<?php echo getProfileImage($tenant['profile_image']) ?>" alt="Photo of <?php echo $tenant['name']; ?>" width="120" height="120" loading="lazy" style="object-fit: cover;object-position: center;" class="rounded-circle">
+        <hr>
         <h5 class="mb-1 fs-2"><?php echo $tenant['name']; ?></h5>
         <p class="mb-2 pb-1 fw-light" style="color: #2b2a2a;font-size: .9rem;"><?php echo $tenant['email']; ?></p>
         <div class="d-flex flex-column justify-content-start align-items-stretch rounded-3 p-4 mb-2"
