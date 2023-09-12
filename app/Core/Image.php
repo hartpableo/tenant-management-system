@@ -7,7 +7,7 @@ class Image
   public static function handleImage($imgFile)
   {
     $imgFile = self::cleanFileName($imgFile);
-    $uploadDir = BASE_PATH . '/assets/images/';
+    $uploadDir = BASE_PATH . '/public/assets/images/';
 
     // Check if directory exists and if not, create it
     if (!file_exists($uploadDir)) mkdir($uploadDir, 0777, true);

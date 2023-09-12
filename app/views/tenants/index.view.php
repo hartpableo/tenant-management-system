@@ -11,6 +11,7 @@ get_template_part('alerts');
       <thead>
         <tr>
           <th scope="col">ID</th>
+          <th scope="col">&nbsp;<span class="visually-hidden">Profile Image</span></th>
           <th scope="col">Name</th>
           <th scope="col">Email Address</th>
           <th scope="col">Contact Number</th>
@@ -23,6 +24,9 @@ get_template_part('alerts');
   <?php foreach ($tenants as $tenant) : ?>
         <tr>
           <th scope="row"><?php echo $tenant['id']; ?></th>
+          <td>
+            <img src="<?php echo assetPath("images/{$tenant['profile_image']}") ?>" alt="" width="60" height="60" loading="lazy">
+          </td>
           <td><?php echo $tenant['name']; ?></td>
           <td><a href="mailto:<?php echo $tenant['email']; ?>"><?php echo $tenant['email']; ?></a></td>
           <td><a href="tel:<?php echo $tenant['contact'];?>"><?php echo $tenant['contact'];?></a></td>
