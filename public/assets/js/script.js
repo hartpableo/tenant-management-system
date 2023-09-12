@@ -2,7 +2,7 @@ window.addEventListener('load', () => {
 
   removeAlerts(document.querySelectorAll('.alert'));
 
-  imageInput.addEventListener('change', previewSelectedImage);
+  (imageInput) && imageInput.addEventListener('change', previewSelectedImage);
 
 }, {passive: true})
 
