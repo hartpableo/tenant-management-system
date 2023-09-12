@@ -18,6 +18,7 @@ A system aiming to ease the property owners' job in keeping track of their tenan
 - View tenant profile
 - Update/edit tenant profile
 - Remove/delete tenant data
+- Tenant profile image upload
 
 ## Contact Author
 

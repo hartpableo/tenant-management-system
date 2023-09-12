@@ -5,7 +5,7 @@
   ]);
 ?>
 
-  <form action="/tenant/update" method="POST" class="mx-auto p-5 rounded-4 border shadow-lg" style="max-width: var(--bs-breakpoint-sm);">
+  <form action="/tenant/update" method="POST" enctype="multipart/form-data" class="mx-auto p-5 rounded-4 border shadow-lg" style="max-width: var(--bs-breakpoint-sm);">
     <h2 class="fs-4 m-0 fw-normal"></strong></h2>
     <h2 class="fs-4 m-0 fw-bold w-100 d-inline-flex justify-content-start align-items-center gap-3 lh-1">
       <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#3a0ddb" class="bi bi-pencil-square" viewBox="0 0 16 16" aria-hidden="true">
@@ -29,6 +29,11 @@
     <div class="mb-3">
       <label class="form-label" for="contact">Contact Number</label>
       <input type="tel" id="contact" name="contact" class="form-control" value="<?php echo $tenant['contact']; ?>">
+    </div>
+    <div class="mb-3">
+      <img src="<?php echo getProfileImage($tenant['profile_image']) ?>" alt="Photo of <?php echo $tenant['name']; ?>" width="120" height="120" loading="lazy" style="object-fit: cover;object-position: center;" aria-hidden="true">
+      <label for="profile-image" class="form-label d-block mt-2">Profile Picture</label>
+      <input class="form-control w-full" type="file" id="profile-image" name="profile-image">
     </div>
     <div class="mb-3">
       <label class="form-label" for="room">Room</label>

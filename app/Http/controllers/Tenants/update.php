@@ -3,7 +3,6 @@
 use Core\App;
 use Core\Session;
 use Core\Database;
-use Core\Authenticator;
 use Http\Forms\UpdateTenantForm;
 
 $db = App::resolve(Database::class);
@@ -12,7 +11,8 @@ $attributes = [
   'name' => trim($_POST['name']),
   'email' => $_POST['email'],
   'contact' => $_POST['contact'],
-  'room' => $_POST['room']
+  'room' => $_POST['room'],
+  'profile_image' => $_FILES['profile-image']
 ];
 
 $form = UpdateTenantForm::validate($attributes);
@@ -22,10 +22,6 @@ $tenant = $db->query('select * from tenants where id = :id', [
 ])->findOrFail();
 
 if (!$tenant) $form->addError('errors', 'Tenant already registered!')->throw();
-
-// $tenantExists = (new Authenticator())->tenantExists($attributes);
-
-// if ($tenantExists) redirect("/tenant/edit?id={$tenant['id']}");
 
 $form->updateTenant($attributes);
 
