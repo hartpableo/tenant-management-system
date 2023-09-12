@@ -4,8 +4,12 @@ namespace Core;
 
 class Image
 {
-  public static function handleImage($imgFile)
+  public static function handleImage($imgFile, $origImgFile = '')
   {
+    if (!empty($origImgFile) && empty($imgFile)) {
+      return $origImgFile;
+    }
+
     $imgFile = self::cleanFileName($imgFile);
     $uploadDir = BASE_PATH . '/public/assets/images/';
 

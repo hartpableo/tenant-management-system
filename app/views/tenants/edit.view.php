@@ -16,8 +16,11 @@
     </h2>
     
     <hr>
+    
     <input type="hidden" name="id" value="<?php echo $tenant['id']; ?>">
+    <input type="hidden" name="orig-profile-image" value="<?php echo $tenant['profile_image']; ?>">
     <input type="hidden" name="_method" value="PATCH">
+
     <div class="mb-3">
       <label for="name" class="form-label">Name</label>
       <input type="text" class="form-control" id="name" name="name" value="<?php echo $tenant['name'] ?? ''; ?>">
@@ -39,10 +42,6 @@
       <label class="form-label" for="room">Room</label>
       <input type="text" id="room" name="room" class="form-control" value="<?php echo $tenant['room']; ?>">
     </div>
-    <!-- <div class="mb-3">
-      <label class="form-label" for="rent_start">Rent Started</label>
-      <input type="date" id="rent_start" name="rent_start" class="form-control" value="<//?php echo date('Y-m-d', strtotime($tenant['rent_start'])); ?>">
-    </div> -->
     <div class="btn-group btn-group mt-3">
       <button type="submit" class="btn btn-primary">Update</button>
       <a href="/" class="btn btn-secondary">Go Back</a>

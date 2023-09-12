@@ -12,7 +12,8 @@ $attributes = [
   'email' => $_POST['email'],
   'contact' => $_POST['contact'],
   'room' => $_POST['room'],
-  'profile_image' => $_FILES['profile-image']
+  'profile_image' => $_FILES['profile-image'],
+  'orig_profile_image' => $_POST['orig-profile-image']
 ];
 
 $form = UpdateTenantForm::validate($attributes);

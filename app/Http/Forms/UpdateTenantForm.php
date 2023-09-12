@@ -34,7 +34,7 @@ class UpdateTenantForm extends Form
       ':name' => $attributes['name'],
       ':email' => $attributes['email'],
       ':contact' => Formatter::phoneNumber($attributes['contact']),
-      ':profile_image' => Image::handleImage($attributes['profile_image']['name']),
+      ':profile_image' => Image::handleImage($attributes['profile_image']['name'], $attributes['orig_profile_image']),
       ':room' => $attributes['room']
     ]);
   }
