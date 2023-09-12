@@ -53,6 +53,11 @@ function assetPath($path_to_file) {
   return ROOT . "/assets/{$path_to_file}";
 }
 
+function getProfileImage($image) {
+  if (!isset($image) || !strlen($image)) return "https://placehold.co/75";
+  return assetPath("images/{$image}");
+}
+
 function auth() {
   return $_SESSION['user'] ?? false;
 }

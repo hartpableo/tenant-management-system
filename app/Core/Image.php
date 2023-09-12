@@ -16,7 +16,7 @@ class Image
 
     if (move_uploaded_file($_FILES['profile-image']['tmp_name'], $uploadFile)) return $imgFile;
     
-    show('Error');
+    // show('Error');
   }
 
   private static function cleanFileName($filename) {

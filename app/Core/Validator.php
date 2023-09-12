@@ -22,7 +22,7 @@ class Validator
 
   public static function imageValidate($imageFile = [], $maxSize = 1000000)
   {
-    return $imageFile['error'] <= 0 && $imageFile['size'] <= $maxSize;
+    return $imageFile['size'] <= $maxSize;
   }
 
   public static function contactNumber($value)
