@@ -19,5 +19,9 @@
       </svg>
       Add new tenant
     </a>
+    <form action="/export" method="POST">
+      <input type="hidden" name="export" value="true">
+      <input type="submit" value="Export List to CSV" class="btn btn-info">
+    </form>
   </div>
 </div>

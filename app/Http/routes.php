@@ -22,3 +22,4 @@ $router->delete('/tenant/delete', 'Tenants/destroy')->only('auth');
 $router->get('/tenant/profile', 'Tenants/show')->only('auth');
 $router->get('/tenant/edit', 'Tenants/edit')->only('auth');
 $router->patch('/tenant/update', 'Tenants/update')->only('auth');
+$router->post('/export', 'Tenants/export-data')->only('auth');
