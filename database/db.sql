@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db:3306
--- Generation Time: Aug 30, 2023 at 04:05 PM
+-- Generation Time: Sep 12, 2023 at 03:06 PM
 -- Server version: 10.4.30-MariaDB-1:10.4.30+maria~ubu2004-log
 -- PHP Version: 8.1.16
 
@@ -51,6 +51,7 @@ CREATE TABLE `tenants` (
   `name` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
   `contact` varchar(15) NOT NULL,
+  `profile_image` varchar(1024) DEFAULT NULL,
   `room` varchar(20) NOT NULL,
   `rent_start` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -59,10 +60,9 @@ CREATE TABLE `tenants` (
 -- Dumping data for table `tenants`
 --
 
-INSERT INTO `tenants` (`id`, `name`, `email`, `contact`, `room`, `rent_start`) VALUES
-(31, 'John Williamson', 'williamsonj@gmail.com', '+639501233625', '3C', '2023-09-01 00:00:00'),
-(34, 'Jill Valentine', 'jvalentine@residentevil.com', '+639872712391', '1B', '2023-09-06 00:00:00'),
-(35, 'Lorenzo Seroy', 'lorenzo@sample.com', '+6398372615238', '2B', '2023-09-07 00:00:00');
+INSERT INTO `tenants` (`id`, `name`, `email`, `contact`, `profile_image`, `room`, `rent_start`) VALUES
+(51, 'John Doe', 'hart@google.com', '+639502133123', '1694530985-167-150x150.jpg', '4B', '2023-09-14 00:00:00'),
+(52, 'Hart Lorenzo', 'hart@marameodesign.com', '+639876351627', '1694530219-357406467_747056030759092_3830201930921821129_n.jpg', '5A', '2023-09-15 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -94,7 +94,7 @@ ALTER TABLE `managers`
 -- AUTO_INCREMENT for table `tenants`
 --
 ALTER TABLE `tenants`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
