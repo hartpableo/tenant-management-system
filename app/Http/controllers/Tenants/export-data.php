@@ -66,9 +66,19 @@ $markup .= "
  * ==========
 */
 
-$datenow = date('M-Y');
+$datenow = date('M-Y--') . time();
 ob_end_clean();
 
-header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-header("Content-Disposition: attachment; filename:Tenants-Data--{$datenow}.xls");
-echo $markup;
+// header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+// header("Content-Disposition: attachment; filename:Tenants-Data--{$datenow}.xls");
+header("Content-Type: application/csv");
+header("Content-Disposition: attachment; filename=Tenants-Data--{$datenow}.csv");
+header("Pragma: no-cache");
+
+$outputFile = fopen('php://output', 'r+');
+
+foreach ($tenantsData as $tenant) :
+  fputcsv($outputFile, $tenant);
+endforeach;
+
+fclose($outputFile);
